@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <base href="/">
+    <title>Employee Project Allocation System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- code added for bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+</head>
+
+<body>
+    <div class="jumbotron text-center"  >
+    <h1>Employee Project Allocation System</h1>
+    </div>  
+    <pm-app></pm-app>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="col-lg-12 well">
+        <h1>Please Add Employees here.. </h1>
+    </div>
+    <div class="col-lg-12 well">
+        <div class="row">
+            <form>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label> First Name</label>
+                            <input type="text" placeholder="Enter First Name.." class="form-control" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label> Last Name</label>
+                            <input type="text" placeholder="Enter Last Name.." class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label> Employee ID </label>
+                            <input type="text" placeholder="Enter Employee ID.." class="form-control" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label> Title </label>
+                            <input type="text" placeholder="Enter Title.." class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label> Domain </label>
+                            <input type="text" placeholder="Enter skills like .NET / Java / Salesforce.." class="form-control" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label> Email Address </label>
+                            <input type="text" placeholder="Enter official EMail ID.." class="form-control" required>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-lg btn-info" (click)="emp_Added()">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-12 well">
+
+        <div class="table-responsive" *ngIf="employees && employees.length">
+            <table class="table" *ngIf="employees && employees.length">
+                <thead>
+                    <tr>
+                        <th>
+                            First Name
+                        </th>
+                        <th>
+                            Last Name
+                        </th>
+                        <th>
+                            Employee ID
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Domain
+                        </th>
+                        <th>
+                            Email Address
+                        </th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.FirstName | uppercase}}</td>
+                    <td>{{employee.LastName | uppercase}}</td>
+                    <td>{{employee.EmployeeID }}</td>
+                    <td>{{employee.Title }}</td>
+                    <td>{{employee.Domain}}</td>
+                    <td>{{employee.Email_Address}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
