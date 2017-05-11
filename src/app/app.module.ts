@@ -8,8 +8,8 @@ import { WelcomeComponent } from './home/welcome.component'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 
-import { EmployeeModule } from './Employee/Employee.module'
-import { EmployeeComponent } from './Employee/Employee.component'
+import { employeeModule } from './Employee/employee.module'
+import { employeeComponent } from './Employee/employee.component'
 
 @NgModule({
   imports: [BrowserModule,
@@ -18,12 +18,12 @@ import { EmployeeComponent } from './Employee/Employee.component'
     CommonModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'Employee', component: EmployeeComponent },
+      { path: 'Employee', component: employeeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  declarations: [AppComponent, WelcomeComponent, EmployeeComponent],
+  declarations: [AppComponent, WelcomeComponent, employeeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

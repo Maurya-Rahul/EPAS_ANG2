@@ -11,24 +11,24 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var common_1 = require("@angular/common");
 var Employee_Component_1 = require("./Employee.Component");
-var EmployeeModule = (function () {
-    function EmployeeModule() {
+var employeeModule = (function () {
+    function employeeModule() {
     }
-    return EmployeeModule;
+    return employeeModule;
 }());
-EmployeeModule = __decorate([
+employeeModule = __decorate([
     core_1.NgModule({
         imports: [http_1.HttpModule, forms_1.FormsModule,
             common_1.CommonModule,
             router_1.RouterModule.forChild([
-                { path: 'Employee', component: Employee_Component_1.EmployeeComponent },
+                { path: 'Employee', component: Employee_Component_1.employeeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [Employee_Component_1.EmployeeComponent],
+        declarations: [Employee_Component_1.employeeComponent],
         providers: []
     })
-], EmployeeModule);
-exports.EmployeeModule = EmployeeModule;
-//# sourceMappingURL=Employee.module.js.map
+], employeeModule);
+exports.employeeModule = employeeModule;
+//# sourceMappingURL=employee.module.js.map

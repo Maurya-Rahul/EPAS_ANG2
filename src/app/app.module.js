@@ -13,7 +13,7 @@ var http_1 = require("@angular/http");
 var welcome_component_1 = require("./home/welcome.component");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var Employee_component_1 = require("./Employee/Employee.component");
+var employee_component_1 = require("./Employee/employee.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,12 +27,12 @@ AppModule = __decorate([
             common_1.CommonModule,
             router_1.RouterModule.forRoot([
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
-                { path: 'Employee', component: Employee_component_1.EmployeeComponent },
+                { path: 'Employee', component: employee_component_1.employeeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, Employee_component_1.EmployeeComponent],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -3,8 +3,9 @@ import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { CommonModule } from '@angular/common'
+import { EmployeeService } from './employee.service'
 
-import { EmployeeComponent } from './Employee.Component'
+import { employeeComponent } from './Employee.Component'
 
 @NgModule
     (
@@ -12,14 +13,14 @@ import { EmployeeComponent } from './Employee.Component'
         imports: [HttpModule, FormsModule,
             CommonModule,
             RouterModule.forChild([
-                { path: 'Employee', component: EmployeeComponent },
+                { path: 'Employee', component: employeeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [EmployeeComponent],
+        declarations: [employeeComponent],
         providers: []
     })
-export class EmployeeModule {
+export class employeeModule {
 
 }
