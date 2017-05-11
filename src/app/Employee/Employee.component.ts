@@ -10,6 +10,7 @@ import { EmployeeService } from './employee.service'
     providers: [EmployeeService]
 })
 export class employeeComponent {
+    searchItem: string;
     errorMessage: string;
     employees: IEmployee[];
 

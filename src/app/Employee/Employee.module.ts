@@ -11,8 +11,7 @@ import { employeeComponent } from './Employee.Component'
     (
     {
         imports: [HttpModule, FormsModule,
-            CommonModule,
-            RouterModule.forChild([
+            CommonModule, RouterModule.forChild([
                 { path: 'Employee', component: employeeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }

@@ -13,6 +13,7 @@ var http_1 = require("@angular/http");
 var welcome_component_1 = require("./home/welcome.component");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
+var employee_filter_pipe_1 = require("./Employee/employee-filter.pipe");
 var employee_component_1 = require("./Employee/employee.component");
 var AppModule = (function () {
     function AppModule() {
@@ -32,7 +33,7 @@ AppModule = __decorate([
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent, employee_filter_pipe_1.employeePipe],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

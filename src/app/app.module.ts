@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http'
 import { WelcomeComponent } from './home/welcome.component'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
+import { employeePipe } from './Employee/employee-filter.pipe'
 
 import { employeeModule } from './Employee/employee.module'
 import { employeeComponent } from './Employee/employee.component'
@@ -23,7 +24,7 @@ import { employeeComponent } from './Employee/employee.component'
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  declarations: [AppComponent, WelcomeComponent, employeeComponent],
+  declarations: [AppComponent, WelcomeComponent, employeeComponent, employeePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

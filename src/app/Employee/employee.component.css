@@ -1,3 +1,8 @@
 thead{
     color: lightskyblue;
 }
+
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
