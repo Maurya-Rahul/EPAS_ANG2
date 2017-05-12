@@ -13,6 +13,7 @@ export class employeeComponent {
     searchItem: string;
     errorMessage: string;
     employees: IEmployee[];
+    isVisible: boolean = false;
 
     constructor(private _empService: EmployeeService) {
 
@@ -22,11 +23,15 @@ export class employeeComponent {
     }
 
     emp_Added(): void {
-        alert("Employee added! Added employees will be displayed in the page once you click OK");
-        this._empService.getEmployees()
-            .subscribe(
-            employees => this.employees = employees,
-            error => this.errorMessage = error);
-
-    }
+        this.isVisible = !this.isVisible;
+        if (this.isVisible) {
+            this._empService.getEmployees()
+                .subscribe(
+                employees => this.employees = employees,
+                error => this.errorMessage = error);
+        }
+        else {
+            this.employees = null;
+            }
+        }
 }
