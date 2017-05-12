@@ -13,20 +13,23 @@ var employee_service_1 = require("./employee.service");
 var employeeComponent = (function () {
     function employeeComponent(_empService) {
         this._empService = _empService;
-        this.isVisible = false;
+        this.isVisible = true;
     }
     employeeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._empService.getEmployees()
+            .subscribe(function (employees) { return _this.employees = employees; }, function (error) { return _this.errorMessage = error; });
     };
     employeeComponent.prototype.emp_Added = function () {
         var _this = this;
-        this.isVisible = !this.isVisible;
         if (this.isVisible) {
+            this.employees = null;
+        }
+        else {
             this._empService.getEmployees()
                 .subscribe(function (employees) { return _this.employees = employees; }, function (error) { return _this.errorMessage = error; });
         }
-        else {
-            this.employees = null;
-        }
+        this.isVisible = !this.isVisible;
     };
     return employeeComponent;
 }());

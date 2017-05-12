@@ -13,25 +13,30 @@ export class employeeComponent {
     searchItem: string;
     errorMessage: string;
     employees: IEmployee[];
-    isVisible: boolean = false;
+    isVisible: boolean = true;
 
     constructor(private _empService: EmployeeService) {
 
     }
     ngOnInit(): void {
-
+        this._empService.getEmployees()
+            .subscribe(
+            employees => this.employees = employees,
+            error => this.errorMessage = error);
     }
 
     emp_Added(): void {
-        this.isVisible = !this.isVisible;
+
         if (this.isVisible) {
+            this.employees = null;
+        }
+        else {
             this._empService.getEmployees()
                 .subscribe(
                 employees => this.employees = employees,
                 error => this.errorMessage = error);
         }
-        else {
-            this.employees = null;
-            }
-        }
+        this.isVisible = !this.isVisible;
+
+    }
 }
