@@ -9,16 +9,26 @@ import { EmployeeService } from './employee.service'
     styleUrls: ['app/Employee/employee.component.css'],
     providers: [EmployeeService]
 })
-export class employeeComponent {
+export class employeeComponent implements OnInit {
+    public myForm: FormGroup;
     searchItem: string;
     errorMessage: string;
     employees: IEmployee[];
     isVisible: boolean = true;
 
-    constructor(private _empService: EmployeeService) {
+    constructor(private _empService: EmployeeService, private _fb: FormBuilder) {
 
     }
     ngOnInit(): void {
+        this.myForm = this._fb.group({
+            FirstName: ['', [<any>Validators.required, <any>Validators.minLength(3)]],
+            LastName: ['', [<any>Validators.required, <any>Validators.minLength(3)]],
+            EmployeeID: ['', [<any>Validators.required, <any>Validators.minLength(3)]],
+            Title: ['', [<any>Validators.required, <any>Validators.minLength(3)]],
+            Domain: ['', [<any>Validators.required, <any>Validators.minLength(3)]],
+            Email_Address: ['', [<any>Validators.required, <any>Validators.minLength(3)]]
+        });
+
         this._empService.getEmployees()
             .subscribe(
             employees => this.employees = employees,
@@ -26,7 +36,6 @@ export class employeeComponent {
     }
 
     emp_Added(): void {
-
         if (this.isVisible) {
             this.employees = null;
         }
@@ -37,6 +46,9 @@ export class employeeComponent {
                 error => this.errorMessage = error);
         }
         this.isVisible = !this.isVisible;
-
+    }
+    save(model: User, isValid: boolean) {
+        this.submitted = true;
+        console.log(model, isValid);
     }
 }

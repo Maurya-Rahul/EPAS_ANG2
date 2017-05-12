@@ -15,6 +15,7 @@ import { employeeComponent } from './Employee/employee.component'
 @NgModule({
   imports: [BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     CommonModule,
     RouterModule.forRoot([
