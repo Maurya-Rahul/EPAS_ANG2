@@ -47,8 +47,8 @@ export class employeeComponent implements OnInit {
         }
         this.isVisible = !this.isVisible;
     }
-    save(model: User, isValid: boolean) {
-        this.submitted = true;
-        console.log(model, isValid);
-    }
+    // save(model: User, isValid: boolean) {
+    //     this.submitted = true;
+    //     console.log(model, isValid);
+    // }
 }

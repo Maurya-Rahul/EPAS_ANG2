@@ -41,10 +41,6 @@ var employeeComponent = (function () {
         }
         this.isVisible = !this.isVisible;
     };
-    employeeComponent.prototype.save = function (model, isValid) {
-        this.submitted = true;
-        console.log(model, isValid);
-    };
     return employeeComponent;
 }());
 employeeComponent = __decorate([
