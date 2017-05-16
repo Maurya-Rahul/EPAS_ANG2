@@ -120,16 +120,18 @@
                     </tr>
                 </thead>
                 <tr *ngFor='let employee of employees | employeePipeFilter: searchItem'>
-                    <td>{{employee.FirstName | uppercase}}</td>
+                    <td>
+                        <a [routerLink]="['/Employee',employee.EmployeeID]">
+                        {{employee.FirstName | uppercase}}
+                        </a>
+                    </td>
                     <td>{{employee.LastName | uppercase}}</td>
                     <td>{{employee.EmployeeID }}</td>
                     <td>{{employee.Title }}</td>
                     <td>{{employee.Domain}}</td>
                     <td>{{employee.Email_Address}}</td>
                     <td>
-                        <ai-star [rating]='employee.Rating'
-                        (notify)='onRatingClicked($event)'
-                        ></ai-star>
+                        <ai-star [rating]='employee.Rating' (notify)='onRatingClicked($event)'></ai-star>
                     </td>
                 </tr>
             </table>

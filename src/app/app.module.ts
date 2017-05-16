@@ -12,6 +12,7 @@ import { employeePipe } from './Employee/employee-filter.pipe'
 import { employeeModule } from './Employee/employee.module'
 import { employeeComponent } from './Employee/employee.component'
 import { StarComponent } from './shared/star.component'
+import { EmployeeDetailComponent } from './Employee/employee-Detail.component'
 @NgModule({
   imports: [BrowserModule,
     FormsModule,
@@ -21,11 +22,12 @@ import { StarComponent } from './shared/star.component'
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'Employee', component: employeeComponent },
+      { path: 'Employee/:id', component: EmployeeDetailComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  declarations: [AppComponent, WelcomeComponent, employeeComponent, employeePipe, StarComponent],
+  declarations: [AppComponent, WelcomeComponent, employeeComponent, employeePipe, StarComponent, EmployeeDetailComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

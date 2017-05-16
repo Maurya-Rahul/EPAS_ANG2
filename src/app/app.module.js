@@ -16,6 +16,7 @@ var common_1 = require("@angular/common");
 var employee_filter_pipe_1 = require("./Employee/employee-filter.pipe");
 var employee_component_1 = require("./Employee/employee.component");
 var star_component_1 = require("./shared/star.component");
+var employee_Detail_component_1 = require("./Employee/employee-Detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,11 +32,12 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: 'Employee', component: employee_component_1.employeeComponent },
+                { path: 'Employee/:id', component: employee_Detail_component_1.EmployeeDetailComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent, employee_filter_pipe_1.employeePipe, star_component_1.StarComponent],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent, employee_filter_pipe_1.employeePipe, star_component_1.StarComponent, employee_Detail_component_1.EmployeeDetailComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
