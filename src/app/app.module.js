@@ -15,6 +15,7 @@ var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var employee_filter_pipe_1 = require("./Employee/employee-filter.pipe");
 var employee_component_1 = require("./Employee/employee.component");
+var star_component_1 = require("./shared/star.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,7 @@ AppModule = __decorate([
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
         ],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent, employee_filter_pipe_1.employeePipe],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, employee_component_1.employeeComponent, employee_filter_pipe_1.employeePipe, star_component_1.StarComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

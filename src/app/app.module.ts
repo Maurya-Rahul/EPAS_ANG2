@@ -11,7 +11,7 @@ import { employeePipe } from './Employee/employee-filter.pipe'
 
 import { employeeModule } from './Employee/employee.module'
 import { employeeComponent } from './Employee/employee.component'
-
+import { StarComponent } from './shared/star.component'
 @NgModule({
   imports: [BrowserModule,
     FormsModule,
@@ -25,7 +25,7 @@ import { employeeComponent } from './Employee/employee.component'
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  declarations: [AppComponent, WelcomeComponent, employeeComponent, employeePipe],
+  declarations: [AppComponent, WelcomeComponent, employeeComponent, employeePipe, StarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -41,6 +41,9 @@ var employeeComponent = (function () {
         }
         this.isVisible = !this.isVisible;
     };
+    employeeComponent.prototype.onRatingClicked = function (message) {
+        alert(message);
+    };
     return employeeComponent;
 }());
 employeeComponent = __decorate([

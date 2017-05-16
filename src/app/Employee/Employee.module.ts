@@ -4,11 +4,9 @@ import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { CommonModule } from '@angular/common'
 import { EmployeeService } from './employee.service'
-
 import { employeeComponent } from './Employee.Component'
 
-@NgModule
-    (
+@NgModule(
     {
         imports: [HttpModule, FormsModule,
             CommonModule, RouterModule.forChild([
