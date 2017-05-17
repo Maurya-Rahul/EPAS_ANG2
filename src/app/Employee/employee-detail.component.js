@@ -21,8 +21,14 @@ var EmployeeDetailComponent = (function () {
     }
     EmployeeDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._empService.getEmployees().
-            subscribe(function (employees) { return _this.employees = employees; }, function (error) { return _this.errorMessage = error; });
+        this.sub = this._route.params.subscribe(function (params) {
+            var id = params['id'];
+            _this.getEmployee(id);
+        });
+    };
+    EmployeeDetailComponent.prototype.getEmployee = function (id) {
+        var _this = this;
+        this._empService.getEmployee(id).subscribe(function (p) { return _this.employee = p; }, function (error) { return _this.errorMessage = error; });
     };
     EmployeeDetailComponent.prototype.onBack = function () {
         this._router.navigate(['/Employee']);

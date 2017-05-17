@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-// import { } from 'd:/EPAS_ANG2/src/api/Json/employee.json'
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
@@ -25,6 +24,10 @@ var EmployeeService = (function () {
             map(function (response) { return response.json(); })
             .do(function (data) { return console.log('All : ' + JSON.stringify(data)); })
             .catch(this.handleError);
+    };
+    EmployeeService.prototype.getEmployee = function (id) {
+        return this.getEmployees()
+            .map(function (emp) { return emp.find(function (p) { return p.EmployeeID === id; }); });
     };
     EmployeeService.prototype.handleError = function (error) {
         console.error(error);
