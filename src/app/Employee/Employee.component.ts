@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { IEmployee } from './employee'
 import { EmployeeService } from './employee.service'
+import { EmployeeModel } from './employee-Model'
 
 @Component({
     selector: 'emp-main',
@@ -15,7 +16,8 @@ export class employeeComponent implements OnInit {
     errorMessage: string;
     employees: IEmployee[];
     isVisible: boolean = true;
-
+    submitted: boolean = false;
+    model = new EmployeeModel("Dummy", "Dummy", "Dummy", "Dummy", "Dummy", "Dummy");
     constructor(private _empService: EmployeeService, private _fb: FormBuilder) {
 
     }
@@ -50,6 +52,11 @@ export class employeeComponent implements OnInit {
 
     onRatingClicked(message: string) {
         alert(message);
+    }
+    // get diagnostic() { return JSON.stringify(this.model); }
+
+    onSubmit() {
+        this.submitted = true;
     }
     // save(model: User, isValid: boolean) {
     //     this.submitted = true;

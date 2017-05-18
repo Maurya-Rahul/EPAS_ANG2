@@ -11,11 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var employee_service_1 = require("./employee.service");
+var employee_Model_1 = require("./employee-Model");
 var employeeComponent = (function () {
     function employeeComponent(_empService, _fb) {
         this._empService = _empService;
         this._fb = _fb;
         this.isVisible = true;
+        this.submitted = false;
+        this.model = new employee_Model_1.EmployeeModel("Dummy", "Dummy", "Dummy", "Dummy", "Dummy", "Dummy");
     }
     employeeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -43,6 +46,10 @@ var employeeComponent = (function () {
     };
     employeeComponent.prototype.onRatingClicked = function (message) {
         alert(message);
+    };
+    // get diagnostic() { return JSON.stringify(this.model); }
+    employeeComponent.prototype.onSubmit = function () {
+        this.submitted = true;
     };
     return employeeComponent;
 }());
