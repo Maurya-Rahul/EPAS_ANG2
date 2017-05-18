@@ -5,3 +5,8 @@ li {
 div.panel-heading {
    font-size: x-large; 
 }
+body  {
+    background-image: url("back-Image.jpg");
+    background-color: grey;
+    background-size:cover;
+}
